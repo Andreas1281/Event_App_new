@@ -1,0 +1,494 @@
+  html,body {
+    height: 100%;
+    margin: 0;
+  
+      background-color: rgb(233,237,239);
+    font-family: 'RobotoDraft', sans-serif;
+  }
+
+  core-scroll-header-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+
+.detail_content{
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-top: 80px;
+  color: #444;
+  text-align: justify;
+  font-size: 0.9rem !important;
+  font-weight: 300;
+}
+
+
+
+
+/* background for toolbar when it is at its full size */
+core-scroll-header-panel::shadow #headerBg {
+  background-image: url(https://ununsplash.imgix.net/photo-1428604467652-115d9d71a7f1?dpr=2&fit=crop&fm=jpg&h=700&q=75&w=1050);
+}
+
+/* background for toolbar when it is condensed */
+core-scroll-header-panel::shadow #condensedHeaderBg {
+  background-color: #f4b400;
+}
+
+  core-header-panel {
+    height: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  core-toolbar {
+    -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+    color: white;
+    background-color: rgb(13,185,237);
+
+  }
+  #tabs {
+    width: 100%;
+    margin: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+        text-transform: uppercase;
+  }
+  .container {
+    width: 100%;
+    margin: 0 auto;
+  }
+  @media (min-width: 481px) {
+    #tabs {
+      width: 100%;
+    }
+    .container {
+      width: 100%;
+    }
+  }
+
+
+
+#heroimage{
+
+
+
+  background: rgb(240,39,3);                     
+}
+.card-header ::content img {
+  width: 50px !important;
+  border-radius: 50%;
+  margin: 10px;
+  height: 50px !important;
+}
+.spacer{
+  height: 8px;
+}
+
+.actionbutton{
+
+  background: #ff0000 !important;  
+}
+  /*-------------------------
+  Simple reset
+--------------------------*/
+
+
+*{
+  margin:0;
+  padding:0;
+}
+
+
+/*-------------------------
+  General Styles
+--------------------------*/
+
+
+
+a, a:visited {
+  text-decoration:none;
+  outline:none;
+  color:#54a6de;
+}
+
+a:hover{
+  text-decoration:underline;
+}
+
+section, footer, nav{
+  display: block;
+}
+
+
+/*----------------------------
+  The Navigation Menu
+-----------------------------*/
+
+
+#colorNav > ul{
+   width: 100px;
+  margin: 0 auto;
+  z-index: 300;
+  margin-top: 8px;
+  margin-bottom: 10px;
+  right: -27px;
+  position: relative;
+  top: 0px;
+
+  
+}
+
+#colorNav > ul > li{ /* will style only the top level li */
+  list-style: none;
+  box-shadow: 0 0 10px rgba(100, 100, 100, 0.2) inset,1px 1px 1px #CCC;
+  display: inline-block;
+  line-height: 1;
+  margin: 1px;
+
+  position:relative;
+}
+
+#colorNav > ul > li > a{
+  color:inherit;
+  text-decoration:none !important;
+  font-size:44px;
+  padding: 25px;
+}
+#fb{
+  background: #3b5998;
+  font-size: 0.9rem !important;
+  font-weight: 300;
+}
+
+#t {
+  background: #3cf;
+  font-size: 0.9rem !important;
+  font-weight: 300;
+}
+
+#cal{
+  background: #002F5D;
+  font-size: 0.9rem !important;
+  font-weight: 300;
+}
+
+#colorNav li ul{
+  position: absolute;
+  list-style: none;
+  text-align: right;
+  width: 170px;
+  right: -1px;
+  top: 53px;
+  font-weight: 200;
+  max-height: 0px;
+  overflow: hidden;
+  -webkit-transition: max-height 0.4s linear;
+  -moz-transition: max-height 0.4s linear;
+  transition: max-height 0.4s linear;
+}
+
+#colorNav li ul li{
+ 
+   margin-bottom: 6px;
+  border-radius: 8px !important;
+}
+
+#colorNav li ul li a{
+  padding:12px;
+  color:#fff !important;
+  text-decoration:none !important;
+  display:block;
+   
+}
+
+#colorNav li ul li:nth-child(odd){ /* zebra stripes */
+  background-color:#363636;
+}
+
+#colorNav li ul li:hover{
+  background-color:#444;
+}
+
+#colorNav li ul li:first-child{
+  
+  margin-top: 15px;
+  position: relative;
+  margin-bottom: 6px;
+  border-radius: 3px;
+}
+
+#colorNav li ul li:first-child:before{ /* the pointer tip */
+  content:'';
+  position:absolute;
+  width:1px;
+  height:1px;
+  border:5px solid transparent;
+  border-bottom-color:#313131;
+  left:80%;
+  top:-10px;
+  margin-left:-5px;
+}
+
+#colorNav li ul li:last-child{
+  border-bottom-left-radius:3px;
+  border-bottom-right-radius:3px;
+}
+
+/* This will trigger the CSS */
+/* transition animation on hover */
+
+#colorNav li:hover ul{
+  max-height:550px; /* Increase when adding more dropdown items */
+}
+
+
+/*----------------------------
+  Color Themes
+-----------------------------*/
+
+
+#colorNav li.green{
+  /* This is the color of the menu item */
+  background-color:#00c08b;
+  
+  /* This is the color of the icon */
+  color:#127a5d;
+}
+
+.plus {
+  margin-top: -39px;
+  margin-left: 15px;
+}
+
+
+#colorNav li.red{
+
+  background-color: #85bc22;
+  border-radius: 50%;
+  width: 55px;
+  color: #fff;
+  height: 55px;
+
+
+}
+#colorNav li.blue{    background-color:#53bfe2;color:#2884a2;}
+#colorNav li.yellow{  background-color:#f8c54d;color:#ab8426;}
+#colorNav li.purple{  background-color:#df6dc2;color:#9f3c85;}
+
+.titel{
+  color: #ffffff !important;
+  font-size: 18px;
+  font-weight: 400;
+    opacity: 0.7;
+}
+
+.burger{
+  color: #ffffff !important;
+  opacity: 0.7;
+}
+.search{
+  color: #ffffff !important;
+  opacity: 0.7;
+}
+
+ .more{
+  color: #ffffff !important;
+  opacity: 0.7;
+}
+#detailcard{
+  margin-left: 10px;
+  color: rgb(38,50,56) !important;
+  font-size: 16px;
+  line-height: 22px;
+  margin-top: 20px;
+  background-color: rgb(233,237,239);
+  margin-left: 20px;
+  margin-right: 20px;
+  font-weight: 500;
+}
+
+
+#detailcard h2{
+  font-weight: 200;
+  font-size: 22px;
+  margin-bottom: 10px;
+
+}
+
+#title_bg{
+
+  margin-bottom: 20px;
+
+  margin-left: -20px;
+  padding-top: 8px;
+  margin-right: -20px;
+    margin-top: -63px;
+  padding-bottom: 8px;
+}
+#content{
+  padding-top: 15px;
+  font-size: 14px;
+  color: rgb(38,50,56);
+  font-weight: 300;
+  border-top: 1px solid #ccc;
+  text-align: justify;
+}
+
+#telefon_p{
+padding-top: 6px;
+padding-bottom: 20px;
+}
+#ort_p{
+padding-top: 6px;
+}
+
+#beginn_p{
+padding-top: 6px;
+float: left;
+margin-right: 15px;
+}
+
+#ende_p{
+padding-top: 6px;
+float: left;
+}
+
+
+
+#email_p{
+padding-top: 6px;
+}
+
+.event{
+  float: left;
+  margin-right: 10px;
+  margin-top: 4px;
+  color: rgba(0, 125, 200,1);
+  margin-bottom: 4px;
+}
+
+.mail{
+float: left;
+margin-right: 10px;
+margin-top: 4px;
+margin-bottom: 4px;
+ color: rgba(0, 125, 200,1);
+}
+
+.call{
+float: left;
+margin-right: 10px;
+margin-top: 4px;
+margin-bottom: 4px;
+ color: rgba(0, 125, 200,1);
+}
+
+#titel_h1{
+   font-weight: 100;
+  color: #fff;
+  position: absolute;
+  margin-top: -63px;
+  width: auto;
+  padding-right: 20px;
+  margin-left: -20px;
+  padding-bottom: 8px;
+  padding-top: 8px;
+  font-size: 21px;
+  background: rgba(38,50,56,0.8);
+  padding-left: 20px;
+}
+
+#ort_h2{
+  font-weight: 200;
+  font-size: 22px;
+
+}
+
+#beginn{
+float: left;
+
+}
+#ende{
+float: left;
+}
+
+.clear{
+  clear: left;
+}
+
+#ort_h2_desc{
+  font-weight: 200;
+  margin-bottom: 20px;
+  font-size: 22px;
+
+}
+
+
+#detailcard h3{
+  font-weight: 300;
+  margin-bottom: 10px;
+  font-size: 22px;
+  margin-top: 20px;
+
+}
+
+#card_content_h4{
+  font-size: 15px;
+  font-weight: 400;
+  padding-bottom: 8px;
+  padding-left: 10px;
+  padding-right: 5px;
+  padding-top: 10px;
+}
+#card_content_p{
+   font-size: 13px;
+  font-weight: 100;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 5px;
+}
+.spacer{
+  height: 20px;
+}
+
+#content_card{
+  font-size: 15px;
+  color: #555;
+  height: auto;
+  background: #fff;
+
+  margin-bottom: 25px;
+  min-width: 100%;
+  margin-top: -4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+paper-tabs.pink::shadow #selectionBar {
+background-color: rgba(6,85,109,0.5);
+}
+
+paper-tabs.pink paper-tab::shadow #ink {
+  color:rgba(6,85,109,0.5);
+}
+
+
+
+
+
+::host{
+  color: #323232 !important;
+}
+
+.view{
+  margin-top: -20px;
+}
+
+

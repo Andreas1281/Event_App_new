@@ -1,0 +1,144 @@
+<link rel="import" href="../components/polymer/polymer.html">
+<link rel="import" href="../services/post-service.html">
+<link rel="import" href="post-card.html">
+
+<polymer-element name="post-list" attributes="show">
+  <template>
+    <style>
+    :host {
+      display: block;
+      width: 100%;
+
+  position: relative;
+  background-color: #fff;
+  width: 100%;
+  border-bottom: 1px solid #ddd !important;
+  font-size: 0.9rem;
+  font-weight: 300;
+
+    }
+
+  
+
+     .place{
+      margin-bottom: 8px !important;
+      margin-top: 0px !important;
+      font-size: 0.9rem !important;
+  
+   }
+
+   .desc{
+
+      margin-bottom: 5px !important;
+      margin-top: 0px !important;
+  margin-right: 20px;
+  font-size: 0.9rem !important;
+
+    margin-bottom: 5px !important;
+  margin-top: 0px !important;
+  margin-right: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 0.9rem !important;
+ 
+   }
+
+   .title{
+    font-size: 1.1rem !important;
+  font-weight: 400;
+  margin-bottom: 6px;
+  margin-top: 0;
+
+ }
+ .content_list{
+position: relative;
+  margin: 0;
+ }
+
+
+#bild{
+  float: left;
+}
+
+
+
+#bild img{
+
+        width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+
+core-icon-button {
+  color: #ccc !important;
+}
+
+
+
+  .detailbild {
+  position: relative;
+}
+.detailbild:before {
+  display: block;
+  content: "";
+  width: 100%;
+  padding-top: 56.25%;
+}
+.detailbild > .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+
+:host {
+  position: relative;
+  background-color: #fff;
+  width: 100%;
+  border-bottom: 1px solid #ddd !important;
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+    </style>
+
+    <post-service id="service" posts="{{posts}}"></post-service>
+
+    <!-- Event entry -->    
+    <div layout vertical center>
+      <template repeat="{{post in posts}}">
+        <post-card
+          favorite="{{post.favorite}}"
+          on-favorite-tap="{{handleFavorite}}"
+          hidden?="{{show == 'favorites' && !post.favorite}}">
+          
+         <div id="bild"> <img src="{{post.acf.veranstaltungsbild}}"  /></div>
+
+          <div class="content_list">
+          <h2 class="title">{{post.title}}</h2>
+          <p class="place">{{post.acf.veranstaltungsort}}</p>
+          <p class="desc">{{post.acf.kurzbeschreibung}}</p>
+          </div>
+
+        </post-card>
+      </template>
+    </div>
+  </template>
+
+  <script>
+  Polymer({
+    handleFavorite: function(event, detail, sender) {
+      var post = sender.templateInstance.model.post;
+      this.$.service.setFavorite(post.uid, post.favorite);
+    }
+  });
+  </script>
+</polymer-element>
