@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+
+<head>
+
+  <title>Fulda Events</title>
+
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <script src="components/webcomponentsjs/webcomponents.js"></script>
+  <link rel="import" href="components/font-roboto/roboto.html">
+  <link rel="import" href="components/core-header-panel/core-header-panel.html">
+  <link rel="import" href="components/core-toolbar/core-toolbar.html">
+  <link rel="import" href="components/paper-tabs/paper-tabs.html">
+  <link rel="import" href="components/core-scaffold/core-scaffold.html">
+  <link rel="import" href="pages/post-detail.html">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="import" href="components/core-scroll-header-panel/core-scroll-header-panel.html">
+
+    <style>
+    html {
+      text-transform: none;
+    }
+    :host {
+      display: block;
+      width: 100%;
+    }
+ 
+    .tab{
+      background-image: none !important;
+      background: rgb(13,185,237);
+    }
+
+    .core-toolbar {
+
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: white;
+  background: #666 !important;
+  background-image: none !important;
+
+
+    }
+    ::content > * {
+  margin: 0 8px;
+  text-transform: none;
+}
+  
+
+  #selectionBar {
+  background-color: #016DD6 !important;
+}
+
+
+paper-tabs.pink::shadow #selectionBar {
+background-color: rgba(6,85,109,0.5) !important;
+}
+
+paper-tabs.pink paper-tab::shadow #ink {
+  color:rgba(6,85,109,0.5) !important;
+}
+
+
+    </style>
+
+</head>
+
+<body unresolved>
+
+
+<core-header-panel flex>
+
+
+
+  <core-toolbar class="medium-tall">
+  
+    <paper-icon-button icon="menu"></paper-icon-button>
+    <div id="titel" flex>Events App</div>
+    <paper-icon-button icon="search"></paper-icon-button>
+    <paper-icon-button icon="more-vert"></paper-icon-button>
+    
+    <div class="bottom fit" horizontal layout>
+    
+      <paper-tabs selected="0" flex style="max-width: 600px;">
+    
+        <paper-tab>Event</paper-tab>
+        <paper-tab>Veranstalter</paper-tab>
+     
+        
+      </paper-tabs>
+      
+    </div>
+  
+  </core-toolbar>
+
+
+     <nav id="colorNav">
+      <ul>
+        <li class="red">
+          <a href="#" class=""><div class="plus">+</div></a>
+          <ul>
+          <li><a id="fb" href="#">Auf Facebook teilen</a></li>
+          <li><a id="t"  href="#">Auf Twitter teilen</a></li>
+          <li><a id="cal"   href="#">Im Kalender speichern</a></li>
+          <li><a id="cal"   href="#">Als Favorit speichern</a></li>
+            
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+<div class="container" layout vertical center>
+      <post-list show="content_detail"></post-list>
+
+    </div>
+
+</core-header-panel>
+
+
+
+  <script>
+  var tabs = document.querySelector('paper-tabs');
+  var list = document.querySelector('post-list');
+
+  tabs.addEventListener('core-select', function() {
+    list.show = tabs.selected;
+  });
+  </script>
+</body>
+
+</html>
